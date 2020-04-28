@@ -1,0 +1,6 @@
+#!/bin/bash
+git clone https://gitlab.com/romanov73/example-jpa.git
+./example-jpa/gradlew build
+systemctl stop postgresql-12
+docker build -t zadanie -f MyDockerFile .
+docker run zadanie -it ubuntu bash
